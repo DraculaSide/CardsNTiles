@@ -1,6 +1,6 @@
 --- changelog V0.0.1 ---
 
-possible changes in the Future: {
+(possible?) changes in the Future: {
 # cards now does not cost resources - instead towns and units does
 # gold is now a card, which has to be played as a normal card while it grants money
    as a temporary resource.)
