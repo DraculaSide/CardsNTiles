@@ -1,0 +1,15 @@
+--- changelog V0.0.1 ---
+
+possible changes in the Future: {
+# cards now does not cost resources - instead towns and units does
+# gold is now a card, which has to be played as a normal card while it grants money
+   as a temporary resource.)
++ added card: coin counterfeiter (is placed into the enemy's deck and acts like
+   a cold-card, but it is useless.)
+# 
++ added card-categories: gold; order; economy; attack [possibly single-use]
+}
+
+no actual changes here...
+
+~Becher
