@@ -1,0 +1,2 @@
+hier alle infos, designs und spielprinzipien rein
+nichts davon direkt im programm verwenden, vorher in den projektordner importieren!
