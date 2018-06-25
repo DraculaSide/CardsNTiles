@@ -21,9 +21,4 @@ func add_entity(entity):
 func remove_entity(entity):
 	entity.emit_signal("removed")
 	emit_signal("remove_entity",entity)
-	remove_child(entity)
-
-func free_entity(entity):
-	entity.emit_signal("removed")
-	emit_signal("remove_entity",entity)
 	entity.queue_free()

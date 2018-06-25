@@ -41,9 +41,4 @@ func add_component(component):
 func remove_component(component):
 	component.emit_signal("removed")
 	emit_signal("remove_component",component)
-	remove_child(component)
-
-func free_component(component):
-	component.emit_signal("removed")
-	emit_signal("remove_component",component)
 	component.queue_free()
