@@ -1,5 +1,8 @@
 extends Node
 
+signal add_entity(entity)
+signal remove_entity(entity)
+
 var entitys = []
 var component_types
 
@@ -30,6 +33,7 @@ func _rec_add_component(component):
 		if(entity.has_components(component_types)):
 			entitys.append(entity)
 			_add_entity(entity)
+			self.emit_signal("add_entity",entity)
 
 func _rec_add_entity(entity):
 	entity.connect("add_component",self,"_rec_add_component")
@@ -38,6 +42,7 @@ func _rec_add_entity(entity):
 		if(entity.has_components(component_types)):
 			entitys.append(entity)
 			_add_entity(entity)
+			self.emit_signal("add_entity",entity)
 
 func _rec_remove_component(component):
 	var entity = component.get_entity()
@@ -45,11 +50,13 @@ func _rec_remove_component(component):
 		if(!entity.has_components(component_types)):
 			entity.erase(entity)
 			_remove_entity(entity)
+			self.emit_signal("remove_entity",entity)
 
 func _rec_remove_entity(entity):
 	if(entitys.has(entity)):
 		entity.erase(entity)
 		_remove_entity(entity)
+		self.emit_signal("remove_entity",entity)
 
 func _add_entity(entity):
 	pass
