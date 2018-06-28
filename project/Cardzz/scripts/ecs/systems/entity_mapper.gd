@@ -64,5 +64,5 @@ func _add_entity(entity):
 func _remove_entity(entity):
 	pass
 
-func _get_entitys():
+func get_entitys():
 	return entitys

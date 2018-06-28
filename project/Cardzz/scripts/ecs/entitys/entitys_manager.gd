@@ -1,5 +1,7 @@
 extends Node
 
+const entity_type = preload("entity.gd")
+
 signal add_entity(entity)
 signal remove_entity(entity)
 
@@ -13,10 +15,14 @@ func get_entities_with_components(component_types):
 			entities.append(child)
 	return entities;
 
-func add_entity(entity):
+func add_entity(entity_name,components):
+	var entity = entity_type.new()
+	for component in components:
+		entity.add_component(component)
 	add_child(entity)
 	emit_signal("add_entity",entity)
 	entity.emit_signal("added")
+	return entity
 
 func remove_entity(entity):
 	entity.emit_signal("removed")
